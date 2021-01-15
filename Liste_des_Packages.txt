@@ -1,0 +1,38 @@
+# La liste des packages utilisés :
+
+import pickle
+import praw
+import urllib.request
+import xmltodict
+
+from gensim.summarization.summarizer import summarize
+
+import nltk
+import re
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
+from gensim.parsing.preprocessing import STOPWORDS
+
+
+import os
+
+import json
+import random
+
+import networkx as nx
+
+import igraph
+from pandas import to_datetime
+from datetime import datetime
+
+import flask
+from flask import send_file
+
+import gensim
+
+import numpy
+import matplotlib
+
+import mpld3
+
+import fbprophet
