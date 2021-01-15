@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+  <title>BasecampUI Admin</title>
+  <!-- plugins:css -->
+  <!--<link rel="stylesheet" href="./vendors/materialdesignicons.min.css">
+  <link rel="stylesheet" href="./vendors/vendor.bundle.base.css">
+  <link rel="stylesheet" href="./vendors/vendor.bundle.addons.css">-->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="./images/favicon.png" />
+  <link href="css/force.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<!-- Police -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-scroller">
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo" href="./Graph.html"><img src="./images/logo.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="./Graph.html"><img src="./images/logo-mini.svg" alt="logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end justify-content-lg-start">
+      </div>
+    </nav>
+    <div class="container-fluid page-body-wrapper">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+              <span class="menu-title">Graph</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Filtrage</h4>
+                  <div class="row">
+                    <div class="col-lg-4 grid-margin stretch-card">
+                      <h5>Start mounth: </h5>
+                      <input type="month" id="start_month" name="start_month">
+                    </div>
+                    <div class="col-lg-4 grid-margin stretch-card">
+                      <h5>End mounth: </h5>
+                      <input type="month" id="end_mounth" name="start_month">
+                    </div>
+                    <div class="col-lg-4 grid-margin stretch-card">
+                      <h5>Documents list: </h5>
+                      <input list="documents_list" id="documents_list_input" name="documents_list_input"/>
+                      <datalist id="documents_list">
+                    </datalist>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-rounded btn-fw" onclick="set_graph()">Filtrer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Mots</h4>
+                  <h5 id="word_label"></h5>
+                  <button id="prediction_graph" type="button" class="btn btn-primary btn-rounded btn-fw" style="display:none;" onclick="get_predict_graph()">Get_predict</button>
+                  <div class="row">
+                    <div class="col-lg-6 grid-margin stretch-card">
+                      <label id="cooc_label">Liste des mots coocurrent:</label>
+                      <ul id='cooc_word'></ul>
+                    </div>
+                    <div class="col-lg-6 grid-margin stretch-card">
+                      <label id="cooc_doc_label">Liste des Documents associés:</label>
+                      <ul id='cooc_doc'></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Graph</h4>
+                  <svg width="1300" height="1000"></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a href="https://www.urbanui.com/" target="_blank">Urbanui</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="./vendors/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="./js/off-canvas.js"></script>
+  <script src="./js/hoverable-collapse.js"></script>
+  <script src="./js/template.js"></script>
+  <script src="./js/settings.js"></script>
+  <script src="./js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="./js/force.js"></script>
+
+  <!-- End custom js for this page-->
+</body>
+
+</html>
